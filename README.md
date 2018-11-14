@@ -1,10 +1,5 @@
 
-# Introduction
-
-This document describes the environment details (Servers etc..) related to Yammer eDiscovery (YETI) application.
-
-
-# About Yammer Extraction Tool (YET)
+# Yammer Extraction Tool (YET)
 
 Yammer Extraction Tool (YETI) is used to download, process and upload yammer data related to all groups (public and private) to SharePoint for future purposes. Yammer Export API is used to download data. Data uploaded to SP is crawled and indexed and will be ready for eDiscovery searches. 
 
