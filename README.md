@@ -12,7 +12,7 @@ Data Processing:
 Export API gives output Zip file for each day. Data is loaded into SQL tables & extract attachments to File share. User information is fetched using Users API. We download missing attachments and notes (Pages). HTML file for each thread with related conversations and attachments is prepared. Then folder is created for each Thread and Html file and attachments are placed.
 
 
-# Installation Steps:
+# Installation
 
 Please refer below documentation for Yammer Extraction Tool (YETI) installation steps.
 https://github.com/Microsoft/YETI/blob/master/GitHub_YETI_Installation.docx
