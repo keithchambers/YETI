@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>YETIDatabase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{f7f1a687-a78c-441e-bc9b-5bb036a8cb10}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>YETIDatabase</RootNamespace>
+    <AssemblyName>YETIDatabase</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+ <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="dbo\Scripts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\YM_EventLogs.sql" />
+    <Build Include="dbo\Tables\YM_FileThreadList.sql" />
+    <Build Include="dbo\Tables\YM_PageThreadList.sql" />
+    <Build Include="dbo\Tables\YM_MessagesSample.sql" />
+    <Build Include="dbo\Tables\YM_DocumentLibraries.sql" />
+    <Build Include="dbo\Tables\tempAzure.sql" />
+    <Build Include="dbo\Tables\YM_ArchivedThreadsBuffer.sql" />
+    <Build Include="dbo\Tables\YM_MissedFileAttachments.sql" />
+    <Build Include="dbo\Tables\YM_MissedPageAttachments.sql" />
+    <Build Include="dbo\Tables\YM_MessagesSample_Test.sql" />
+    <Build Include="dbo\Tables\YM_ExportDetails.sql" />
+    <Build Include="dbo\Tables\YM_UsersList.sql" />
+    <Build Include="dbo\Tables\YM_ArchivedThreadsBak.sql" />
+    <Build Include="dbo\Tables\DupThreads_DocLibStatus.sql" />
+    <Build Include="dbo\Tables\DupThreads_TopLevelFolderStatus.sql" />
+    <Build Include="dbo\Tables\YM_ArchivedThreads.sql" />
+    <Build Include="dbo\Tables\ym_yammeryears.sql" />
+    <Build Include="dbo\Tables\Dupthreads_DocLibThreadDetails.sql" />
+    <Build Include="dbo\Tables\DupThreads_WithRepeatedCount.sql" />
+    <Build Include="dbo\Tables\Dupthreads_ThreadsRepeated.sql" />
+    <Build Include="dbo\Tables\YM_ArchivedThreadsRepo.sql" />
+    <Build Include="dbo\Tables\Dupthreads_ThreadSummary.sql" />
+    <Build Include="dbo\Tables\spbatchlistbak.sql" />
+    <Build Include="dbo\Tables\YM_FileShareLists.sql" />
+    <Build Include="dbo\Tables\YM_SPDirectoryMapping.sql" />
+    <Build Include="dbo\Tables\YM_AzureContainer.sql" />
+    <Build Include="dbo\Tables\batchnotmp.sql" />
+    <Build Include="dbo\Tables\YM_SPBatchLists.sql" />
+    <Build Include="dbo\Tables\YM_Messages.sql" />
+    <Build Include="dbo\Tables\YM_Files.sql" />
+    <Build Include="dbo\Tables\YM_Pages.sql" />
+    <Build Include="dbo\Tables\YM_Topics.sql" />
+    <Build Include="dbo\Tables\YM_Users.sql" />
+    <Build Include="dbo\Views\V_SPThreadDetails.sql" />
+    <Build Include="dbo\Functions\ListUserIds.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_RemoveURLFromAttachments.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_RemoveURLFromAttachments_Test.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_DocumentLibraryCreation.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_CheckFolderExistsInContainer.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_CheckExportDetailsForSharepoint.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_GetJobIdsToRemove.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_BulkInsert.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_DeleteJobIds.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_LoadUserIdFromBody.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_DownloadAttachments.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_CheckRangeForFileMove.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_VerifyMessagesCount.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_GetListToMapNewVersionFiles.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_PurgeProcessedData.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_LoadFilesVersionList.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_CleanupMessageTable.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_YearDownloadRequest.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_Compress_GetProcessingCount.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_MoveArchivalToRepo.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_UpdateColumnData_YMMessagesSample.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_Update_DownloadCompletion.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_UpdateThreadStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_UpdateProcessingStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_GetThrdsAndUsrsToGenFls.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_GetMsgsAndArchThrdsByThrdId.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_DeleteArchThread.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_GetStatusForLoadData.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_GetUserIds.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_UpdateUserDetails.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_GetMsgDetailsForVer.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_UpdateMsgDetailsForVer.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_UpdateExpDetailsForVer.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_UpdateExpDtlsForFailedThrd.sql" />
+    <Build Include="dbo\Stored Procedures\DupThreads_FetchDocLibStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_GetAttchmntDtlsForRename.sql" />
+    <Build Include="dbo\Stored Procedures\DupThreads_InsertTopLevelSubfolders.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_Common_UpdateStatus.sql" />
+    <Build Include="dbo\Stored Procedures\DupThreads_FetchTopLevelFolders.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_Download_DeleteExportDetails.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_Download_GetInProgressCount.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_Download_GetLastEnddate.sql" />
+    <Build Include="dbo\Stored Procedures\DupThreads_InsertThreadInfo.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_Download_GetTimesTried.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_Download_NewExportDetails.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_LogMissedAttachments.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_DownloadThreadStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_updateThreadswithNoAttachment.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_ResetArchievedXML.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_ResetArchievedThreadStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_GetCopyFromArchiveRepo.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_ToProcessUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_ToDownloadUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_GetOldSharePathList.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_LoadSPDirectoryMapping.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_GetSPDirectoryForUpload.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_ContainerMapping.sql" />
+    <Build Include="dbo\Stored Procedures\DupThreads_FetchThreadstobeDeleted.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_GetYearForSharepoint.sql" />
+    <Build Include="dbo\Stored Procedures\DupThreads_UpdateDeletedThreadStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_Common_LogEvent.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_GetBatchToSubmit.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_GetBatchToReSubmit.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_Update_CompressCompletion.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_CheckBatchInProgress.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_UpdateSharepointStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_Update_ProcessCompletion.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_YearProcessingRequest.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_Update_YearStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_CheckAnyContainerInProgress.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_YearCompressingRequest.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_LoadSPBatchLists.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_GetYearForDedup.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_UpdateSPMapping.sql" />
+    <Build Include="dbo\Stored Procedures\DupThreads_CheckDeleteThreadStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_UpdateBatchStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_Update_ProcessCompletion_old.sql" />
+    <Build Include="dbo\Stored Procedures\Yammer_ReplaceSpecialCharecter.sql" />
+    <Build Include="dbo\User Defined Types\IDTableType.sql" />
+    <Build Include="dbo\User Defined Types\SPBatchTableType.sql" />
+    <Build Include="dbo\User Defined Types\TopLevelFoldersList.sql" />
+    <Build Include="dbo\User Defined Types\SPFileInfoTableType.sql" />
+    <Build Include="dbo\User Defined Types\TBLDeletedThreads.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="dbo\Scripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+</Project>
