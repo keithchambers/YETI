@@ -27,10 +27,7 @@ namespace ConsoleRemoveDuplicateThreads
             GetSecretCmdlet getSecretCmdlet = new GetSecretCmdlet();
            
            
-            getSecretCmdlet.secretURI = ConfigurationManager.AppSettings["YammerAcctNameURL"];
-            SharePointClassLibrary.Configuration.UserName = await getSecretCmdlet.GetSecretAsync();
-            getSecretCmdlet.secretURI = ConfigurationManager.AppSettings["YammerAcctPWDURL"];
-            SharePointClassLibrary.Configuration.PassWord = await getSecretCmdlet.GetSecretAsync();
+      
 
             List<SharePointClassLibrary.SPFileInfo> ListSPFiles = new List<SharePointClassLibrary.SPFileInfo>();
             List<string> filepaths = new List<string>();

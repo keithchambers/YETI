@@ -115,12 +115,7 @@ namespace ConsoleYammerApplication
         getSecretCmdlet.secretURI = ConfigurationManager.AppSettings["RobocopyFileCommandTemplate"];
             RobocopyFileCommandTemplate = await getSecretCmdlet.GetSecretAsync();
 
-        getSecretCmdlet.secretURI = ConfigurationManager.AppSettings["SP_Url"];
-            SP_Url = await getSecretCmdlet.GetSecretAsync();
-
-        getSecretCmdlet.secretURI = ConfigurationManager.AppSettings["SP_targetLibrary"];
-            SP_targetLibrary = await getSecretCmdlet.GetSecretAsync();
-
+       
     }
 
     static async Task MainAsync()
